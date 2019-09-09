@@ -17,8 +17,7 @@ material, etc.) you consulted in completing this assignment.
   Tristan Metnink
   Lab Mentors >
 
-Remember: Your implementation for this assignment must be done on your
-own, as described in "Academic Integrity for Homework" handout.
+This code takes an input of university classes, departments, and student statistics, and outputs the statistic requested by the user.
 
 
 ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 35 >
@@ -28,9 +27,5 @@ ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 35 >
 DESCRIPTION OF YOUR CREATIVE STATISTIC:
 Returns how many courses (broken into each day (e.g. if Course1.getday() == "MR", that counts as 2 courses)) in each department occur in each room sorted by most frequent.
 
-
-
-MISC. COMMENTS TO GRADER:  
-Optional, please be concise!
 
 
