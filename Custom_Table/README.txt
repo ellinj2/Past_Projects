@@ -16,8 +16,8 @@ Xavier Marshall
 Prof. Holzbauer
 Adam G. (submitty forum) >
 
-Remember: Your implementation for this assignment must be done on your
-own, as described in "Academic Integrity for Homework" handout.
+This code demonstrates my first custom data structure. It is a table that can hold any data type and perform various functions similar
+to the standard Table structure.
 
 
 ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 25 >
@@ -73,8 +73,4 @@ multi-row: O(n*n*m*m)
 
 multi-column: O(n*m*m)
 
-
-
-MISC. COMMENTS TO GRADER:  
-(optional, please be concise!)
 
