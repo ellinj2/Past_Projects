@@ -8,12 +8,12 @@ COLLABORATORS AND OTHER RESOURCES:
 Ohad Nir
 Xavier Marshall
 Zak Kubli
-Henok (whatever his last name is)
+Henok Yemani
 cplusplus.com
 
 
-Remember: Your implementation for this assignment must be done on your
-own, as described in "Academic Integrity for Homework" handout.
+This code takes in a .txt input that resembles a pixel image. Defined functions perform operations to modify the pixel image and outputs 
+the new image.
 
 
 
