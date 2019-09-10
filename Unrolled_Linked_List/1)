@@ -1,5 +1,0 @@
-1)
-            size()  push_back()  erase()  insert()  pop_back()
--vector:    O(1)	O(n)		 O(n)	  O(n)		O(1)
--sl list:   O(1)	O(n)		 O(1)	  O(1)		O(n)
--STL list:  O(1)	O(1)		 O(1)	  O(1)		O(1)
