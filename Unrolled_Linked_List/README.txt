@@ -13,8 +13,7 @@ material, etc.) you consulted in completing this assignment.
 < Ohad Nir
 Zak Kubli >
 
-Remember: Your implementation for this assignment must be done on your
-own, as described in "Academic Integrity for Homework" handout.
+This code creates a custom unrolled linked list data structure that is similar to the standard ULL.
 
 
 
