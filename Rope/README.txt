@@ -13,8 +13,7 @@ material, etc.) you consulted in completing this assignment.
 < Xavier Marshall
 Ohad Nir >
 
-Remember: Your implementation for this assignment must be done on your
-own, as described in "Academic Integrity for Homework" handout.
+This code creates a custom Rope class similar to a standard Rope.
 
 
 ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < Too many (maybe 30) >
@@ -32,19 +31,19 @@ unbalanced rope for the string "Hello my name is Simon".
 
 Unbalanced rope: One massive left tree. No right nodes. Ever.
 
-Copy Constructor: 1) O(m) 2) O(p*m)
+Copy Constructor: Balanced) O(m) Unbalanced) O(p*m)
 
-Construct from Node*: 1) O(m) 2) O(p*m)
+Construct from Node*: Balanced) O(m) Unbalanced) O(p*m)
 
-Index: 1) O(p) 2) O(p)
+Index: Balanced) O(p) Unbalanced) O(p)
 
-Report: 1) O(n) 2) O(n*p)
+Report: Balanced) O(n) Unbalanced) O(n*p)
 
-iterator operator++: 1) O(p) 2) O(p)
+iterator operator++: Balanced) O(p) 2Unbalanced) O(p)
 
-Split: Didn't finish implementing. Roughly 1) O(p) 2) O(p)
+Split: Didn't finish implementing. Roughly Balanced) O(p) Unbalanced) O(p)
 
-Concat: 1) O(1) 2) O(1)
+Concat: Balanced) O(1) Unbalanced) O(1)
 
 
 TESTING & DEBUGGING STRATEGY: 
