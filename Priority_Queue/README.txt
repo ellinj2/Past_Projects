@@ -13,8 +13,7 @@ Online resources should have specific URLs
 
 < Ohad Nir (the best rubber duck) >
 
-Remember: Your implementation for this assignment must be done on your
-own, as described in "Academic Integrity for Homework" handout.
+This code creates a custom Priority Queue class. It is tested with "Jobs" that are sorted by Time or Urgency (or both).
 
 
 
