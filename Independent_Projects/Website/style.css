@@ -68,12 +68,18 @@ html, body
 
 }
 
+.logo
+{
+
+	padding-left: 50px;
+
+}
+
 .logo img
 {
 
 	padding-top: 0px;
-	padding-left: 50px;
-	width: 150px;
+	width: 100px;
 	height: auto;
 	display: inline;
 	float: left;
@@ -116,6 +122,7 @@ header.about
 {
 
 	background-color: #A9A9A9;
+	font-family: monospace, sans-serif;
 	font-size: 12pt;
 	padding-left: 1%;
 	padding-top: 2%;
@@ -143,7 +150,7 @@ header.education
 .current
 {
 
-	font-family: "Roboto";
+	font-family: "Roboto", sans-serif;
 	color: white;
 	padding-left: 2%;
 	padding-top: 25%;
@@ -223,10 +230,87 @@ header.research
 
 }
 
+.research-txt
+{
+
+	background-color: black;
+	color: white;
+	padding-left: 1%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+}
+
+.research-txt a
+{
+
+	color: white;
+	font-size: 12pt;
+	font-family: monospace, sans-serif;
+	text-decoration: underline;
+	text-decoration: bold;
+
+}
+
+.research-txt p
+{
+
+	text-indent: 3%;
+	font-size: 12pt;
+	font-family: monospace, sans-serif;
+
+}
+
+.research-txt h1
+{
+
+	font-size:20pt;
+	font-family: didot, serif;
+
+}
+
+header.future
+{
+
+	background-image: url(Images/future-bg.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+
+}
+
+.future-txt
+{
+
+	color:white;
+	background-color: #858D98;
+	padding-left: 1%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+}
+
+.future-txt h1
+{
+
+	font-size:20pt;
+	font-family: didot, serif;
+	text-decoration: underline;
+
+}
+
+.future-txt p
+{
+
+	font-size: 12pt;
+	font-family: monospace, sans-serif;
+
+}
+
 header.contact
 {
 
-	background-image: url(images/Test.jpg);
+	background-image: url(images/contact-bg.jpg);
 	height: 100vh;
 	background-size: cover;
 	background-position: center; 
