@@ -2,7 +2,6 @@
 Archive of all completed coding projects\
 Subfolders:\
   CSCI1100: Completed projects from Introduction to Computer Science (Python)\
-  CSCI1200: Completed projects from Data Structures (C++)\
-  CSCI2200: Completed projects from Foundations of Computer Science (Latex)\
+  CSCI2300: Completed Projects from Intro to Algorithms (various)\
   CSCI2500: Completed projects from Computer Organization (C, MIPS)\
   Independent Projects: Projects completed outside of academics
