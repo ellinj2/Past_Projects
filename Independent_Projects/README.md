@@ -1,7 +1,9 @@
+# Independent_Projects
+
 This folder contains projects designed and completed outside of academcis
 
-Subfolders:
+## Subfolders:
 
-Website - All relevant files for my personal website
+- **Website**: All relevant files for my personal website
 
-Python - All projects completed using the Python language
+- **Python**: All projects completed using the Python language
