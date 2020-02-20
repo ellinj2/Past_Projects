@@ -4,6 +4,29 @@
 	padding: 0;
 }
 
+table, th, tr, td
+{
+
+	border: 1px solid white;
+	margin-bottom: 2%;
+
+}
+
+table, th
+{
+
+	border: 1px solid white;
+
+}
+
+tr, td
+{
+
+	padding: 5px;
+	text-align: center;
+
+}
+
 header.home
 {
 
@@ -272,7 +295,7 @@ header.research
 header.future
 {
 
-	background-image: url(Images/future-bg.jpg);
+	background-image: url(images/future-bg.jpg);
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
