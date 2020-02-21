@@ -79,7 +79,7 @@ def visualize(total, data):
 	fig.update_layout(barmode="group")
 	fig.show()
 
-mode=input("What checkpoint are we looking at? ")
+mode=input("What checkpoint are we looking at (a,b,c)? ")
 if mode=="a":
 	g=G(5,0.7)
 	print("This graph contains the following nodes:")

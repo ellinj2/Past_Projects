@@ -96,6 +96,36 @@ class Graph:
 					ids.append(edge.first.id)
 		return tree
 
+	def Bollman_Ford(self):
+		test=Graph(deepcopy(self.nodes), [], "Bollman_Ford Tree of {}".format(self.name))
+		distance={}
+		for node in test.nodes:
+			distance[node.id]=len(test.nodes)**4 #initialize distances to MASSIVE number
+		initial=choice(test.nodes)
+		distance[initial.id]=0
+		print(distance)
+		for node in test.nodes:
+			for edge in self.edges:
+				if node.id==edge.second.id:
+					print(edge, distance[edge.first.id]+edge.weight, distance[node.id])
+					if distance[edge.first.id]+edge.weight<distance[node.id]:
+						distance[node.id]=distance[edge.first.id]+edge.weight
+						test.edges.append(edge)
+				if node.id==edge.first.id:
+					if distance[edge.second.id]+edge.weight<distance[node.id]:
+						distance[node.id]=distance[edge.first.id]+edge.weight
+						test.edges.append(edge)
+
+		for edge in test.edges:
+			if node.id==edge.second.id:
+				if distance[edge.first.id]+edge.weight<distance[node.id]:
+					raise Exception("ERROR: Infinite negative cycle found!!!")
+			if node.id==edge.first.id:
+				if distance[edge.second.id]+edge.weight<distance[node.id]:
+					raise Exception("ERROR: Infinite negative cycle found!!")
+		return test
+
+
 	def __str__(self):
 		retstr="{}:\n".format(self.name)
 		self.edges.sort(key=lambda x: x.first.id)
@@ -128,12 +158,15 @@ print()
 
 u_in=""
 while u_in != "End":
-	u_in=input("What algorithm do you want to run? (Please use capitalized name) ")
+	u_in=input("What algorithm do you want to run? (Please use capitalized name) or \"End\" ")
 	if u_in=="Kruskal":
 		result=G.Kruskal()
 
 	elif u_in=="Prim":
 		result=G.Prim()
+
+	elif u_in=="Bollman_Ford":
+		result=G.Bollman_Ford()
 
 	print(result)
 	print()
