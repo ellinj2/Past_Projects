@@ -1,6 +1,6 @@
 # CSCI2500
 
-Projects completed for the Computer Organization course at Rensselaer Polytechnic Institute using the C and MIPS32 languages
+Projects completed for the Computer Organization course at Rensselaer Polytechnic Institute using the C, Python and MIPS32 languages
 
 ## Subfolders
 
