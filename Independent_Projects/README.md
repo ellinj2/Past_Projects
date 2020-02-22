@@ -7,3 +7,5 @@ This folder contains projects designed and completed outside of academcis
 - **Website**: All relevant files for my personal website
 
 - **Python**: All projects completed using the Python language
+
+- **C++**: All projects completed using the C++ language
