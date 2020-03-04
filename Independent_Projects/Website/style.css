@@ -330,6 +330,16 @@ header.future
 
 }
 
+.future-txt .future-header
+{
+
+	color: white;
+	font-size: 24pt;
+	font-family: didot, serif;
+	font-style: italic;
+
+}
+
 header.contact
 {
 
