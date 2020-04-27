@@ -7,3 +7,4 @@ This folder contains all work relevant to homework 7
   - **inputs**: input the character "m" into System.in to get a list of all accepted inputs and how to use them
 - **PathDisplay.java**: The View class for RouteFinder. Manages function calls, exceptions, and output formatting for the software
 - **PathWay.java**: The Model class for RouteFinder. Manages all necessary data and input file parsing for the software
+  - **inputs**: a .csv file containing location data as "name,ID,x-coordinate,y-coordinate" and a file containing path data as "start ID,end ID"
