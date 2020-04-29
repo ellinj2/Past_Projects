@@ -5,21 +5,38 @@ import java.util.*;
 import hw4.*;
 import hw6.MarvelPaths2;
 
-//Model
+//Model class for RouteFinder
 public class PathWay{
+	/*
+	 * Abstraction Function:
+	 * 		this.campus=Graph(<V,E>) such that
+	 * 			V={b1,b2,...} buildings and intersections on campus
+	 * 			E={e1,e1,...} paths connecting buildings and intersections on campus with weight=distance (pixel units)
+	 * 
+	 * Representation Invariant:
+	 * 		if this.campus=null, coords.keySet().size()=0, angles.keySet().size=0
+	 * 		else, coords.keySet().size()=campus.size(), angles.keySet().size()=campus.E().size()
+	 * 
+	 * 
+	 */
 	private Graph<String,Float> campus;
 	private Map<Node<String, Float>, int[]> coords;
 	private Map<Edge<Float,String>,String> angles;
-	//private ArrayList<PathDisplay> observers;
 	
 	public PathWay() {
-		//this.observers=new ArrayList<PathDisplay>();
 		this.campus=new Graph<String,Float>("RPI Campus Map");
 		this.coords=new HashMap<Node<String,Float>, int[]>();
 		this.angles=new HashMap<Edge<Float,String>,String>();
 	}
 	
-	
+	/*
+	 * @param nodeData String name for data file containing building information
+	 * @param edgeData String name for data file containing path information
+	 * @requires nodeData and edgeData are valid files with proper formatting
+	 * @throws IOException if any error found in files
+	 * @modifies this.campus
+	 * @effects populates this.campus.N with building data, populates this.campus.E with path data
+	 */
 	public void populate(String nodeData, String edgeData) throws IOException {
 		FileReader temp=new FileReader(nodeData);
 		temp.close();
@@ -28,7 +45,7 @@ public class PathWay{
 		this.readData(nodeData, edgeData);
 	}
 	
-	
+	//Helper function to parse files
 	private void readData(String nodeData, String edgeData) throws IOException {
 		BufferedReader nodeReader;
 		BufferedReader edgeReader;
@@ -40,6 +57,7 @@ public class PathWay{
         edgeReader.close();
 	}
 	
+	//Helper function to generate Nodes. ERROR CATCHES COMMENTED OUT FOR COVERAGE TESTS
 	private void pullNodes(BufferedReader nodeReader) throws IOException {
 		String line = null;
         while((line=nodeReader.readLine())!=null) {
@@ -56,6 +74,7 @@ public class PathWay{
         		name="Intersection";
         	}
         	i+=1;
+        	//Get ID of building
         	int j=line.indexOf(",", i);
         	//Only pull ID if name==intersection
         	/*
@@ -81,16 +100,18 @@ public class PathWay{
         	location[0]=Integer.parseInt(line.substring(i,j));
         	//Get y-coord
         	location[1]=Integer.parseInt(line.substring(j+1,line.length()));
+        	//Map Node to Location
         	Node<String,Float> building=new Node<String,Float>(name);
         	this.coords.put(building,location);
         	this.campus.addNode(building);
+        	//Make sure the ID matches the Graph ID
         	if(building.ID()!=ID) {
         		this.campus.forceID(building,ID);
         	}
-        	//this.notifyObservers("Added building #"+building.ID()+": "+building.name()+" at "+location[0]+", "+location[1]);
         }
 	}
 	
+	//Helper function to generate Edges. ERROR CATCHES COMMENTED OUT FOR COVERAGE TESTS
 	private void pullEdges(BufferedReader edgeReader) throws IOException {
 		String line;
         while((line=edgeReader.readLine())!=null) {
@@ -102,25 +123,29 @@ public class PathWay{
         		return;
         	}
         	*/
+        	//Find Nodes
         	Node<String,Float> head=this.campus.retrieveNodeID(Integer.parseInt(line.substring(0,i)));
         	Node<String,Float> tail=this.campus.retrieveNodeID(Integer.parseInt(line.substring(i+1,line.length())));
         	int[] hCoords=this.coords.get(head);
         	int[] tCoords=this.coords.get(tail);
+        	//Caluclate distance
         	float distance=(float)Math.sqrt((hCoords[0]-tCoords[0])*(hCoords[0]-tCoords[0])+(hCoords[1]-tCoords[1])*(hCoords[1]-tCoords[1]));
         	Edge<Float,String> path=new Edge<Float,String>(head,tail,distance,(Float)distance);
         	this.campus.addEdge(path);
+        	//Build reflective Edge
         	Edge<Float,String> revPath=new Edge<Float,String>(tail,head,distance,(Float)distance);
         	this.campus.addEdge(revPath);
+        	//Calculate angle and set to positive
         	float angle = (float) Math.toDegrees(Math.atan2(hCoords[1] - tCoords[1], hCoords[0] - tCoords[0]));
            	angle-=90;
         	if(angle<0) {angle+=360;}
+        	//Map Edge to direction
            	this.angles.put(path,getDirectionfromAngle(angle)[0]);
            	this.angles.put(revPath,getDirectionfromAngle(angle)[1]);
-        	//this.notifyObservers("Added a "+String.format("%.3f",distance)+" pixel "+getDirectionfromAngle(angle)[0]+"ern path from "+head.name()+"("+head.ID()+") to "+tail.name()+"("+tail.ID()+")");
         }
 	}
 	
-	
+	//Helper function to pull the direction from an angle
 	private String[] getDirectionfromAngle(float angle) {
 		String[] retval=new String[2];
 		if(angle<22.5) {
@@ -154,19 +179,29 @@ public class PathWay{
 		return retval;
 	}
 	
+	
+	/*
+	 * @param label Object representing label of Node trying to be found
+	 * @return Node<String,Float> matching label if it exists
+	 */
 	public Node<String,Float> findNode(Object label){
-		//if(label instanceof String) {
-			try {
-				int val=Integer.parseInt((String)label);
-				return this.campus.retrieveNodeID(val);
-			} catch(NumberFormatException e) {
-				return this.campus.retrieveNode((String)label);
-			}
-		//}		
-		//return null;
+		try {
+			//Check if the label contains Integer ID
+			int val=Integer.parseInt((String)label);
+			return this.campus.retrieveNodeID(val);
+		} catch(NumberFormatException e) {
+			//label is a String, not an Integer
+			return this.campus.retrieveNode((String)label);
+		}
 	}
 	
 	
+	/*
+	 * Buffer between public interface and existing Dijkstra's algorithm
+	 * @param head Node<String,Float> at the start of the path
+	 * @param tail Node<String,Float> at the end of the path
+	 * @return Map<Node<String,Float>,Edge<Float,String>> mapping each Node to the Edge that connects it to a path from head
+	 */
 	public Map<Node<String,Float>,Edge<Float,String>> Dijkstra(Node<String,Float> head, Node<String,Float> tail){
 		Map<Node<String,Float>,Edge<Float,String>> parents=new HashMap<Node<String,Float>,Edge<Float,String>>();
 		MarvelPaths2.Dijkstra(head, parents, this.campus);
@@ -174,38 +209,21 @@ public class PathWay{
 	}
 	
 	
+	/*
+	 * @param e Edge<Float,String> that has a direction in this.angles
+	 * @return String direction from this.angles.get(e)
+	 */
 	public String EdgeDirection(Edge<Float,String> e) {
 		return this.angles.get(e);
 	}
 	
 	
+	/*
+	 * Buffer between public and private interface
+	 * @returns LinkedList of Nodes from this.campus.N
+	 */
 	public LinkedList<Node<String,Float>> listNodes() {
 		return this.campus.N();
 	}
-	
-	/*
-	public void addObserver(PathDisplay p) {
-		this.observers.add(p);
-	}
-	*/
-	
-	/*
-	private void notifyObservers(String s) {
-		for(PathDisplay o:this.observers) {
-			o.displayText(s);
-		}
-	}
-	*/
-	
-	/*
-	public static void main(String args[]) {
-		//Construction tests
-		//long startTime=System.currentTimeMillis();
-		PathWay test=new PathWay();
-		//test.addObserver(new PathDisplay(test));
-		test.readData("data/RPI_map_data_Nodes.csv", "data/RPI_map_data_Edges.csv");
-		//long endTime=System.currentTimeMillis();
-		//System.out.println("That took "+(endTime-startTime)+" milliseconds");
-	}
-	*/
+
 }
