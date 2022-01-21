@@ -1,29 +1,142 @@
 <html>
 <head>
 	<title>Jesse Ellin</title>
+	<link rel="icon" href="images/Logo.png" type="image/x-icon">
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script
+		src="js/jquery-3.6.0.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-<body>
-<header class="home">
-	<div class="row">
-		<ul class="main-nav">
-			<div class="logo">
-				<a href="index.html"><img src="images/Logo.png"></a>
-			</div>
-			<div class="links">
-				<li class="active"><a href="index.html"> HOME </a></li>
-				<li><a href="about.html"> ABOUT </a></li>
-				<li><a href="education.html"> EDUCATION </a></li>
-				<li><a href="research.html"> RESEARCH </a></li>
-				<li><a href="future.html"> FUTURE </a></li>
-				<li><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/link.png", width="10"></a></li>
-				<li><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/link.png", width="10"></a></li>
-				<li><a href="contact.html"> CONTACT </a></li>
-			</div>
-		</ul>
 
+<body class="hide-scrollbar">
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="images/Logo.png" class="nav-img" style="height: 100px;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav">
+					<li class="nav-link active"><a href="index.html"> HOME </a></li>
+					<li class="nav-link"><a href="about.html"> ABOUT </a></li>
+					<li class="nav-link"><a href="education.html"> EDUCATION </a></li>
+					<li class="nav-link"><a href="research.html"> RESEARCH </a></li>
+					<li class="nav-link"><a href="career.html"> CAREER </a></li>
+					<li class="nav-link"><a href="future.html"> FUTURE </a></li>
+					<li class="nav-link"><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="contact.html"> CONTACT </a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false" style="height: 100%;">
+	    <div class="col d-flex justify-content-center" id="display-toggle-button">
+			<div type="button" class="btn btn-light" id="display-toggle">Hide Content</div>
+		</div>
+	  <div class="carousel-indicators" style="top: 100%;">
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+	    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+	  </div>
+	  <div class="carousel-inner">
+	  	<div class="carousel-item active">
+		  <a href="about.html" onmousemove="mouseLink(event)"><img src="images/about-bg.jpg" class="d-block w-100" alt="Jesse sitting on a wall on a mountain near Genoa, Italy" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="About Page"><span id="mouseIcon"></span></div></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>About Jesse Ellin</h5>
+	        <p>A Seattle local deep in upstate New York, I have found myself in a deep rabbit-hole of accelerated academics, Lego addiction, and Dungeons & Dragons story-telling.</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="education.html" onmousemove="mouseLink(event)"><img src="images/education-bg.jpg" class="d-block w-100" alt="Waterfront in Split, Croatia at night" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Education Page"><span id="mouseIcon"></span></div></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Education</h5>
+	        <p>While I am still studying for two concurrent Bachelor's of Science across three fields at Rensselaer Polytechnic Institute, I am also actively planning a Master's of Science study in fair and private Machine Learning.</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="research.html" onmousemove="mouseLink(event)"><img src="images/research-bg.jpg" class="d-block w-100" alt="Nightscape of winter festival in Ljubljana, Slovenia" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Research Page"><span id="mouseIcon"></span></div></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Research</h5>
+	        <p>A fascination in philosophy lead me into Computer Science ethics research and a practical experiment in the applicability of common sense in machines.</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="career.html" onmousemove="mouseLink(event)"><img src="images/career-bg.jpg" class="d-block w-100" alt="Stream near Manchester, Vermont" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Career Page"></div><span id="mouseIcon"></span></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Career</h5>
+	        <p>With hands-on experience in bioinformatics and natural language processing over medical data as well as bioacoustic bouding-box classification it's safe to assume I either know a lot in my field or I have no idea what I'm doing. My bet's on the latter.</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="future.html" onmousemove="mouseLink(event)"><img src="images/future-bg.jpg" class="d-block w-100" alt="Jesse looking over a peninsula near Dublin, Ireland" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Future Page"></div><span id="mouseIcon"></span></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Future</h5>
+	        <p>Well now isn't that a terrifying prospect... After I get my MS, I hope to find myself somewhere between academic lecturer and industry professional. Which is to say just about anywhere in the field of Computer Science.</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="https://github.com/ellinj2/Past_Projects" target="_blank" onmousemove="mouseLink(event)"><img src="images/projects-bg.jpg" class="d-block w-100" alt="Worms-eye view of Hildene in Manchester, Vermont" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Project Repository"><span id="mouseIcon"></span></div></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Projects <img src="images/link.png", width="10"></h5>
+	        <p>A Github repository with all of my personal projects (NOTE: Professional projects are not included in this repo).</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="documents/Resume.pdf" target="_blank" onmousemove="mouseLink(event)"><img src="images/resume-bg.jpg" class="d-block w-100" alt="Worms-eye view of pond in Vermont" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Resume"><span id="mouseIcon"></span></div></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Resume <img src="images/link.png", width="10"></h5>
+	        <p>Pretty much everything you'll find here, but smaller and more professional.</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <a href="contact.html" onmousemove="mouseLink(event)"><img src="images/contact-bg.jpg" class="d-block w-100" alt="Sunrise view in the Sahara desert in Morocco" style="background-color: black; color: white; height: 100%"><div id="tooltip" tip-text="Contact Page"><span id="mouseIcon"></span></div></a>
+	      <div class="carousel-caption d-none d-md-block">
+	        <h5>Contact</h5>
+	        <p>All the various means of modern electronic communication that I am reachable through.</p>
+	      </div>
+	    </div>
+	  </div>
+	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="visually-hidden">Previous</span>
+	  </button>
+	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="visually-hidden">Next</span>
+	  </button>
 	</div>
-</header>
 </body>
 </html>
+
+<script type="text/javascript">
+	var element = document.getElementById("display-toggle")
+	element.onclick = function() {
+	 	$('h5, p').each(function(){
+	 		if (this.style.display == 'none'){
+	 			this.style.display = 'block'
+	 			element.innerText = "Hide Content"
+	 		} else {
+	 			this.style.display = 'none'
+	 			element.innerText = "Show Content"
+	 		}
+	 	})
+	 }
+
+	function mouseLink(e) {
+    	var x = e.clientX;
+    	var y = e.clientY;
+    	var tip = document.getElementsByClassName('carousel-item active')[0].querySelector("#tooltip")
+    	tip.style.left = x + 10 + "px";
+		tip.style.top = y + "px";
+		var text = tip.getAttribute('tip-text')
+		tip.innerText = "Click for " + text
+	}
+</script> 

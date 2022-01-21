@@ -1,40 +1,64 @@
 <html>
 <head>
-	<title>Contact Jesse Ellin</title>
+	<title>Jesse Ellin - Contact</title>
+	<link rel="icon" href="images/Logo.png" type="image/x-icon">
 	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="code.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<header class="contact">
-	<div class="row">
-		<ul class="main-nav">
-			<div class="logo">
-				<a href="index.html"><img src="images/Logo.png"></a>
+<body style="height: 100%;">
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="images/Logo.png" class="nav-img" style="height: 100px;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav">
+					<li class="nav-link"><a href="index.html"> HOME </a></li>
+					<li class="nav-link"><a href="about.html"> ABOUT </a></li>
+					<li class="nav-link"><a href="education.html"> EDUCATION </a></li>
+					<li class="nav-link"><a href="research.html"> RESEARCH </a></li>
+					<li class="nav-link"><a href="career.html"> CAREER </a></li>
+					<li class="nav-link"><a href="future.html"> FUTURE </a></li>
+					<li class="nav-link"><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link active"><a href="contact.html"> CONTACT </a></li>
+				</ul>
 			</div>
-			<div class="links">
-				<li><a href="index.html"> HOME </a></li>
-				<li><a href="about.html"> ABOUT </a></li>
-				<li><a href="education.html"> EDUCATION </a></li>
-				<li><a href="research.html"> RESEARCH </a></li>
-				<li><a href="future.html"> FUTURE </a></li>
-				<li><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/link.png", width="10"></a></li>
-				<li><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/link.png", width="10"></a></li>
-				<li class="active"><a href="contact.html"> CONTACT </a></li>
-			</div>
-		</ul>
-	</div>
+		</div>
+	</nav>
 	<div class="contact-txt">
-		<h1>email (professional)</h1>
-		<p>ellinj2@rpi.edu</p>
-		<h1>email (personal)</h1>
-		<p>iamjesseellin@gmail.com</p>
-		<h1>Linkedin</h1>
-		<p><a href="https://www.linkedin.com/in/jesse-ellin-68a302138/" target="_blank">Jesse Ellin <img src="images/link.png", width="10"></a></p>
-		<h1>Current location</h1>
-		<p>Troy, NY</p>
-		<h1>Permanent location</h1>
-		<p>Seattle, WA</p>
+		<div class="col d-flex justify-content-center">
+			<div type="button" class="btn btn-light" id="display-toggle">Hide Content</div>
+		</div>
+	
+		<div class="contact-content" id="contact-content">
+			<h1>email (professional)</h1>
+			<p>ellinj2@rpi.edu</p>
+			<h1>email (personal)</h1>
+			<p>jesse.ellin@gmail.com</p>
+			<h1>Linkedin</h1>
+			<p><a href="https://www.linkedin.com/in/jesse-ellin-68a302138/" target="_blank">Jesse Ellin <img src="images/link.png", width="10"></a></p>
+			<h1>Current location</h1>
+			<p>Troy, NY</p>
+			<h1>Permanent location</h1>
+			<p>Seattle, WA</p>
+		</div>
 	</div>
-</header>
 </body>
 </html>
+
+<script type="text/javascript">
+	var x = document.getElementById('contact-content');
+	content_toggle(x);
+	document.getElementById("display-toggle").onclick = function() {
+		console.log("Attempting to toggle content")
+		if (x.style.display == "none"){
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+</script>

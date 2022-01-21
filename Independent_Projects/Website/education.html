@@ -1,47 +1,196 @@
 <html>
 <head>
-	<title>Jesse Ellin Education</title>
+	<title>Jesse Ellin - Education</title>
+	<link rel="icon" href="images/Logo.png" type="image/x-icon">
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script
+		src="js/jquery-3.6.0.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="code.js"></script>
 </head>
-<body>
-<header class="education">
-	<div class="row">
-		<ul class="main-nav">
-			<div class="logo">
-				<a href="index.html"><img src="images/Logo.png"></a>
+<body style="height: 100%;" class="hide-scrollbar">
+<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="images/Logo.png" class="nav-img" style="height: 100px;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav">
+					<li class="nav-link"><a href="index.html"> HOME </a></li>
+					<li class="nav-link"><a href="about.html"> ABOUT </a></li>
+					<li class="nav-link active"><a href="education.html"> EDUCATION </a></li>
+					<li class="nav-link"><a href="research.html"> RESEARCH </a></li>
+					<li class="nav-link"><a href="career.html"> CAREER </a></li>
+					<li class="nav-link"><a href="future.html"> FUTURE </a></li>
+					<li class="nav-link"><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="contact.html"> CONTACT </a></li>
+				</ul>
 			</div>
-			<div class="links">
-				<li><a href="index.html"> HOME </a></li>
-				<li><a href="about.html"> ABOUT </a></li>
-				<li class="active"><a href="education.html"> EDUCATION </a></li>
-				<li><a href="research.html"> RESEARCH </a></li>
-				<li><a href="future.html"> FUTURE </a></li>
-				<li><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/link.png", width="10"></a></li>
-				<li><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/link.png", width="10"></a></li>
-				<li><a href="contact.html"> CONTACT </a></li>
-			</div>
-		</ul>
-	</div>
-	<div class="current">
-		<h1>Rensselaer Polytechnic Institute, expected graduation May 2022</h1>
-		<p>Bachelor of Science in Computer Science (Artificial Intelligence and Machine Learning) and Cognitive Science (Artificial Intelligence and Cognitive Modeling)</p>
-		<p>Bachelor of Science in Mathematics (Mathematics of Operations Research)</p>
-	</div>
-</header>
+		</div>
+	</nav>
 <div class="education-txt">
-	<h1>Running GPA: 3.56</h1>
-	<h1>Current courses</h1>
-	<p>Operating Systems, Cognition and the Brain, Research Methods and Statistics I</p>
-	<h1>Completed courses</h1>
-	<p>Computer Science 1, Technology and Social Interactions in the US, Multivariable Calculus, Data Structures, IT and Society, Intro to Cognitive Science, Intro to Formal Logic, Foundations of Computer Science, Computer Organization, Intro to Linguistics, Intro to Algorithms, Principles of Software, Graph Theory, Intro to Differential Equations, Cognitive Psychology</p>
-	<h1>Other</h1>
-	<p>Project Lead the Way: high-school engineering courses designed by Rochester Institute of Technology; Introduction to Engineering Design, Principles of Engineering, Computer Integrated Manufacturing, Engineering Design and Documentation</p>
-	<h1>Skills and Certifications</h1>
-	<p>Red-Cross: First-aid, CPR, pediatric CPR</p>
-	<p>Coding languages: Python, C++, C, MIPS32, Java, HTML, CSS</p>
-	<p>Interface: CMD, Ubuntu, Git</p>
-	<p>World languages (level): French (conversational), Portuguese (conversational), German (basic), Spanish (basic), Italian (basic), Hebrew (basic)</p>
+	<div class="col d-flex justify-content-center">
+		<div type="button" class="btn btn-light" id="display-toggle">Hide Content</div>
+	</div>
+
+	<span id="education-content">
+		<div class="col d-flex justify-content-center align-items-center">
+			<div class="accordion accordion-flush" id="accordionFlushExample" style="width: 80%; padding-top: 4%;">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="flush-headingOne">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="fale" aria-controls="flush-collapseOne">
+							Current Courses
+						</button>
+					</h2>
+			  		<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<p>Ethics of AI (<span type="button" id="ethics" data-bs-toggle="modal" data-bs-target="#ClassModal" data-bs-title="Ethics of AI" class="classModalAbout">
+							about
+						</span>)
+						</p>
+						<p>Sensation and Perception (<span type="button" id="sandp" data-bs-toggle="modal" data-bs-target="#ClassModal" data-bs-title="Sensation and Perception" class="classModalAbout">
+						   	about
+						</span>)
+						</p>
+						<p>Design and Analysis of Algorithms (<span type="button" id="daa" data-bs-toggle="modal" data-bs-target="#ClassModal" data-bs-title="Design and Analysis of Algorithms" class="classModalAbout">
+			        		about
+			        	</span>)
+			        	</p>
+						<p>Intro to AI (<span type="button" id="iai" data-bs-toggle="modal" data-bs-target="#ClassModal" data-bs-title="Intro to AI" class="classModalAbout">
+							about
+						</span>)
+						</p>
+				  	</div>
+			    </div>
+			  	<div class="accordion-item">
+			  		<h2 class="accordion-header" id="flush-headerSix">
+			  			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+							Older Courses		  				
+			  			</button>
+			  		</h2>
+			  		<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+			  			<div class="accordion-body">Machine Learning from Data, Large-Scale Programming and Testing, Software Design and Documentation, Programming Languages, Probablity Theory and Applications, Randomized Algorithms for Machine Learning and Optimization, Programming for Cognitive Science and Artificial Intelligence, Linear Algebra, Metaphysics and Consciousness, Research Methods and Statistics I, Operating Systems, Graph Theory, Cognition and the Brain, Cognitive Psychology, Intro to Differential Equations, Principles of Software, Intro to Algorithms, Intro to Linguistics, Computer Organization, Foundations of Computer Science, Intro to Formal Logic, Intro to Cognitive Science, IT and Society, Data Structures, Computer Science 1, Technology and Social Interactions in the US, Multivariable Calculus</div>
+			  		</div>
+			  	</div>
+			  	<div class="accordion-item">
+			  		<h2 class="accordion-header" id="flush-headingSeven">
+			  			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+			  				Other
+			  			</button>
+			  		</h2>
+			  		<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+			  			<div class="accordion-body">Project Lead the Way: high-school engineering courses designed by Rochester Institute of Technology; Introduction to Engineering Design, Principles of Engineering, Computer Integrated Manufacturing, Engineering Design and Documentation.</div>
+			  		</div>
+			  	</div>
+			  	<div class="accordion-item">
+			  		<h2 class="accordion-header" id="flush-headingEight">
+			  			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-example="false" aria-controls="flush-collapseEight">
+			  				Skills and Certifications
+			  			</button>
+			  		</h2>
+			  		<div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+			  			<div class="accordion-body">
+				  			<ul class="list-group list-group-flush">
+							    <li class="list-group-item">Red-Cross: First-aid, CPR, pediatric CPR</li>
+							    <li class="list-group-item">Coding languages: Python, C++, C, MIPS32, Java, HTML, CSS, JavaScript, R</li>
+							    <li class="list-group-item">Python packages: ABC, DataClasses, Django, Keras, Flask, Numpy/Pandas, Parsimonious, PyTorch, SciKitLearn, Spacy, TensorFlow, Typing</li>
+							    <li class="list-group-item">Interface: CMD, Git, Ubuntu</li>
+							    <li class="list-group-item">World languages (level): French (conversational), Portuguese (basic), German (basic), Spanish (basic), Hebrew (basic), Turkish (basic), Italian (beginner)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="ClassModal" tabindex="-1" aria-labelledby="ClassModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="ClassModalLabel">New message</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+	          <div class="mb-3">
+	          	<p></p>
+	          </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</span>
 </div>
 </body>
 </html>
+
+<script type="text/javascript">
+	content_toggle(document.getElementById('education-content'))
+	
+	const title_content = new Map()
+	title_content.set("ETHICS OF AI", "This course explores ethical issues posed by the proliferation of artificial intelligence technologies. In order to do so, we will first discuss the philosophical issues with ethical theories, and how we can be justified in making ethical judgments in particular cases. We will then survey a number of issues, some of which are as follows. How should we approach thinking about ethical obligation generally? How should we think about designing an ethical algorithm? As technology like autonomous cars are integrated into our lives at scale, what challenges do they pose for human-robot interaction design, psychology, law, and socio-political systems? Which ethical approach or theory should an automated process be programmed to follow when there’s no legal guidance? How ought we make sense of obligation and responsibility in the context of the decisions of an autonomous AI (designer, user, AI itself)? Trust is an essential component of social human life. But how will integrating AI into our lives require us to understand the novel philosophical and legal issues related to interpersonal trust between people and AI? How can we know if AI has a moral status, and deserves the respect a person deserves? Is it permissible for companies to “teach” their products using interactions with the general public? If artificial general intelligence is achieved, how likely is it that an artificial agent’s interests will align with ours? What should we make of the concerns about job displacement due to AI technologies? How worried should we  be about AI? Are we too worried? Not worried enough? What early indicators should influence our attitude about how to answer that question?")
+	title_content.set("SENSATION AND PERCEPTION", "What are the processes that allow humans to detect information about their surroundings, recognize people and objects, and perceive depth and motion? This course will focus on the physiological and neural mechanisms underlying sensation (sight, hearing, and touch), the qualitative aspects of human perceptual experience, and how perception and action are interconnected. Color perception, object recognition, space and motion perception, and perception and action are all examined.")
+	title_content.set("DESIGN AND ANALYSIS OF ALGORITHMS", "This course presents fundamental ideas and techniques of modern algorithm design and analysis. After completing this course, students should be able to formally analyze and design efficient algorithms for a variety of computational problems. Topics covered include Greedy Algorithms, Dynamic Programming, Network Flow, NP-Completeness, Linear Programming, Network Algorithms, as well as probabilistic and approximate algorithms.")
+	title_content.set("INTRO TO AI", "Topics and techniques of artificial intelligence using the language Python. Topics include search, knowledge representation, expert systems, theorem proving, natural language interfaces, learning, game playing, and computer vision. Techniques include pattern matching, data-driven programming, substitution rules, frames, heuristic search, transition networks, neural networks, and evolutionary computation. Development of programming proficiency in Python is emphasized.")
+
+	var default_background = null;
+	var default_border = null;
+
+	var exampleModal = document.getElementById('ClassModal')
+	exampleModal.addEventListener('show.bs.modal', function (event) {
+	    var button = event.relatedTarget
+	    var title = button.getAttribute('data-bs-title')
+	    var id = button.getAttribute('id')
+	    var myModal = document.getElementById(id)
+	  	if (default_border == null) {
+			default_border = myModal.style['border-color']
+		}
+		if (default_background == null) {
+			default_background = myModal.style['background-color']
+		}
+	    myModal.style['border-color'] = "#8b00ff"
+	    myModal.style['background-color'] = "#d7a8ff"
+	    loadModal(title.toUpperCase(), exampleModal)
+	    $("#ClassModal").on('hidden.bs.modal', function() {
+	    	myModal.style['border-color'] = default_border
+	    	myModal.style['background-color'] = default_background
+	    })
+	})
+
+	$(document).ready(function(){
+		const search = window.location.hash.split('?')[1]
+		const urlparams = new URLSearchParams(search)
+		if (urlparams.has('tag')){
+			var myModal = document.getElementById(urlparams.get('tag'))
+			myModal.click()
+		}
+	})
+
+	function loadModal(title, exampleModal){
+	// Button that triggered the modal
+	  // var button = event.relatedTarget
+	  // Extract info from data-bs-* attributes
+	  var content = title_content.get(title)
+
+	  // If necessary, you could initiate an AJAX request here
+	  // and then do the updating in a callback.
+	  //
+	  // Update the modal's content.
+	  var modalTitle = exampleModal.querySelector('.modal-title')
+	  var modalBody = exampleModal.querySelector('.modal-body')
+
+	  modalTitle.textContent = title
+	  modalBody.textContent = content
+	}
+
+</script>

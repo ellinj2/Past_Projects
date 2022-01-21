@@ -1,42 +1,98 @@
 <html>
 <head>
-	<title>Jesse Ellin Research</title>
+	<title>Jesse Ellin - Research</title>
+	<link rel="icon" href="images/Logo.png" type="image/x-icon">
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="code.js"></script>
 </head>
 <body>
-<header class="research">
-	<div class="row">
-		<ul class="main-nav">
-			<div class="logo">
-				<a href="index.html"><img src="images/Logo.png"></a>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="images/Logo.png" class="nav-img" style="height: 100px;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav">
+					<li class="nav-link"><a href="index.html"> HOME </a></li>
+					<li class="nav-link"><a href="about.html"> ABOUT </a></li>
+					<li class="nav-link"><a href="education.html"> EDUCATION </a></li>
+					<li class="nav-link active"><a href="research.html"> RESEARCH </a></li>
+					<li class="nav-link"><a href="career.html"> CAREER </a></li>
+					<li class="nav-link"><a href="future.html"> FUTURE </a></li>
+					<li class="nav-link"><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="contact.html"> CONTACT </a></li>
+				</ul>
 			</div>
-			<div class="links">
-				<li><a href="index.html"> HOME </a></li>
-				<li><a href="about.html"> ABOUT </a></li>
-				<li><a href="education.html"> EDUCATION </a></li>
-				<li class="active"><a href="research.html"> RESEARCH </a></li>
-				<li><a href="future.html"> FUTURE </a></li>
-				<li><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/link.png", width="10"></a></li>
-				<li><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/link.png", width="10"></a></li>
-				<li><a href="contact.html"> CONTACT </a></li>
+		</div>
+	</nav>
+
+	<div class="research-txt">
+		<div class="col d-flex justify-content-center">
+			<div type="button" class="btn btn-light" id="display-toggle">Hide Content</div>
+		</div>
+		<span id="research-content">
+			<div class="col d-flex justify-content-center" style="padding-top: 2.5%;">
+				<div class="card" style="width: 75%; height: 75%;" id="cogsCard">
+			    	<div class="card-body">
+				    	<h5 class="card-title">Is Intelligence Sufficient for Ethics?</h5>
+				    	<h6 class="card-subtitle mb-2 text-muted">RPI, Dr. John Milanese</h6>
+				    	<p class="card-text">Surveying literature on the understanding of ethics and the cognitive processes needed to have an understanding of ethics with the goal of theorizing whether or not an AI can have an undestanding of ethics.</p>
+				    	<a href="career.html#cogs-thesis?tag=cogs-thesis&origin=research.html#cogsCard" class="card-link">More about this project</a>
+				    </div>
+				</div>
 			</div>
-		</ul>
+
+			<div class="col d-flex justify-content-center">
+				<div class="card" style="width: 75%; height: 75%;" id="msCard">
+			    	<div class="card-body">
+				    	<h5 class="card-title">Balancing Privacy and Fairness in Machine Learning Models</h5>
+				    	<h6 class="card-subtitle mb-2 text-muted">RPI, Dr. Alex Gittens</h6>
+				    	<p class="card-text">Surveying the modern methods of quantifying fairness and privacy in machine learning models, as well as the algorithms used to balance them, in order to find a new method of optimizing the fairness-privacy-accuracy trade-off.</p>
+				    	<a href="career.html#masters-study?tag=masters-study&origin=research.html#msCard" class="card-link">More about this project</a>
+				    </div>
+				</div>
+			</div>
+
+			<div class="col d-flex justify-content-center">
+				<div class="card" style="width: 75%; height: 75%;" id="mcsCard">
+			    	<div class="card-body">
+				    	<h5 class="card-title">Machine Common Sense</h5>
+				    	<h6 class="card-subtitle mb-2 text-muted">Tetherless World Constellation, Dr. Minor Gordon</h6>
+				    	<p class="card-text">Parsing massive data corpi to build a common sense knowledge graph.</p>
+				    	<a href="career.html#machine-common-sense?tag=machine-common-sense&origin=research.html#mcsCard" class="card-link">More about this project</a>
+				    </div>
+				</div>
+			</div>
+
+			<div class="col d-flex justify-content-center">
+				<div class="card" style="width: 75%; height: 75%;" id="ccsCard">
+			    	<div class="card-body">
+				    	<h5 class="card-title">Critical CS</h5>
+				    	<h6 class="card-subtitle mb-2 text-muted">RPI, Dr. James Malazita</h6>
+				    	<p class="card-text">Designing, implementing, and analyzing an educational paradigm to introduce ethics into computer science education</p>
+				    	<a href="career.html#critical-cs?tag=critical-cs&origin=research.html#ccsCard" class="card-link">More about this project</a>
+				    	<h6>Published papers</h6>
+				    	<a href="documents/Malazita_Resetar.pdf" target="_blank">Infrastructures of Abstraction</a> <img src="images/dark-link.png" style="height:10px;" />
+				    </div>
+				</div>
+			</div>
+		</span>
+
+	<!-- More content: Copy to critical_cs.html
+			<p>Designing, implementing, and analyzing an educational paradigm</p>
+			<p>to introduce ethics into computer science education</p>
+		</div>
+		<p>STEM education used to include a focus on ethics and the real-world impact of engineering and science beyond the scope of just the goals of any particular project. In recent times, this focus on ethics has been abandoned in favor of training and practice in the "practical" skills needed for the field (e.g. coding, optimization, efficiency). Critical CS hopes to reintroduce ethics and societal impact through hands-on practice and readings to show students that ethics is a necessary consideration in any and all aspects of STEM.</p>
+		<p>I held the role of mentor for my first semester on the team. I was responsible for running the coding side of labs, helping students understand and find solutions to our custom homework, and holding regular office hours. In my second semester, I helped work on rewriting and redesigning homework as we started considering expanding how many lab sections we operated on. Now that we are looking to wrap up the project and produce broader materials, I am leading the homework development team to design homework problems that sufficiently introduce students to topics in coding, computer science, and ethics. I'm also in charge of finding and analyzing potential readings to assign alongside these assignments.</p>
+	-->
 	</div>
-	<div class="ongoing">
-		<h1>Critical CS</h1>
-		<h2>RPI, Dr. James Malazita</h2>
-		<p>Designing, implementing, and analyzing an educational paradigm</p>
-		<p>to introduce ethics into computer science education</p>
-	</div>
-</header>
-<div class="research-txt">
-	<h1>Critical CS</h1>
-	Published Paper(s): <a href="documents/Malazita_Resetar.pdf" target="_blank">Infrastructures of Abstraction</a>
-	<p></p>
-	<p>STEM education used to include a focus on ethics and the real-world impact of engineering and science beyond the scope of just the goals of any particular project. In recent times, this focus on ethics has been abandoned in favor of training and practice in the "practical" skills needed for the field (e.g. coding, optimization, efficiency). Critical CS hopes to reintroduce ethics and societal impact through hands-on practice and readings to show students that ethics is a necessary consideration in any and all aspects of STEM.</p>
-	<p>I held the role of mentor for my first semester on the team. I was responsible for running the coding side of labs, helping students understand and find solutions to our custom homework, and holding regular office hours. In my second semester, I helped work on rewriting and redesigning homework as we started considering expanding how many lab sections we operated on. Now that we are looking to wrap up the project and produce broader materials, I am leading the homework development team to design homework problems that sufficiently introduce students to topics in coding, computer science, and ethics. I'm also in charge of finding and analyzing potential readings to assign alongside these assignments.</p>
-</div>
-</div>
 </body>
-</html>
+
+<script type="text/javascript">
+	content_toggle(document.getElementById('research-content'))
+</script>

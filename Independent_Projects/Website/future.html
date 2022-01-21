@@ -1,40 +1,202 @@
 <html>
 <head>
-	<title>Jesse Ellin Future</title>
+	<title>Jesse Ellin - Future</title>
+	<link rel="icon" href="images/Logo.png" type="image/x-icon">
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	<script
+		src="js/jquery-3.6.0.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="code.js"></script>
 </head>
 <body>
-<header class="future">
-	<div class="row">
-		<ul class="main-nav">
-			<div class="logo">
-				<a href="index.html"><img src="images/Logo.png"></a>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="images/Logo.png" class="nav-img" style="height: 100px;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav">
+					<li class="nav-link"><a href="index.html"> HOME </a></li>
+					<li class="nav-link"><a href="about.html"> ABOUT </a></li>
+					<li class="nav-link"><a href="education.html"> EDUCATION </a></li>
+					<li class="nav-link"><a href="research.html"> RESEARCH </a></li>
+					<li class="nav-link"><a href="career.html"> CAREER </a></li>
+					<li class="nav-link active"><a href="future.html"> FUTURE </a></li>
+					<li class="nav-link"><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/dark-link.png", width="10"></a></li>
+					<li class="nav-link"><a href="contact.html"> CONTACT </a></li>
+				</ul>
 			</div>
-			<div class="links">
-				<li><a href="index.html"> HOME </a></li>
-				<li><a href="about.html"> ABOUT </a></li>
-				<li><a href="education.html"> EDUCATION </a></li>
-				<li><a href="research.html"> RESEARCH </a></li>
-				<li class="active"><a href="future.html"> FUTURE </a></li>
-				<li><a href="https://github.com/ellinj2/Past_Projects" target="_blank"> PROJECTS <img src="images/link.png", width="10"></a></li>
-				<li><a href="documents/Resume.pdf" target="_blank"> RESUME <img src="images/link.png", width="10"></a></li>
-				<li><a href="contact.html"> CONTACT </a></li>
-			</div>
-		</ul>
-	</div>
-</header>
+		</div>
+	</nav>
+
 <div class="future-txt">
-	<h1 class="future-header">Plans for the coming years</h1>
-	<h1>Courses</h1>
-	<p>Computer Science: Programming Languages, Large-Scale Programming and Testing, Machine Learning from Data, Software Design and Documentation, Intro to Artificial Intelligence, Randomized Algorithms for Machine Learning and Optimization, Programming for Cognitive Science and Artificial Intelligence</p>
-	<p>Cognitive Science: Metaphysics and Consciousness, Cognitive Modeling, Undergraduate Thesis</p>
-	<p>Mathematics: Linear Algebra, Probability Theory and Applications, Foundations of Analysis, Foundations of Applied Mathematics, Computational Optimization, Intro to Data Mathematics</p>
-	<h1>Master's Studies: MS Computer Science</h1>
-	<p>Courses: Principles of Program Analysis, Design and Analysis of Algorithms, Natural Language Processing, Cognitive Modeling II, Logic for Artificial Intelligence, Data Analytics Research</p>
-	<p>Master's Project/Master's Thesis in Artificial Intelligence and/or Cognitive Modeling</p>
-	<h1>Research</h1>
-	<p>Machine Learning, Graph Mining, Neural Networking, Artificial Intelligence, Natural Language Processing, or Cognitive Modeling project(s)</p>
+	<div class="col d-flex justify-content-center">
+		<div type="button" class="btn btn-light" id="display-toggle">Hide Content</div>
+	</div>
+	<span id="future-content">
+		<div class='d-grid gap-2 col-6 mx-auto' style="padding-top: 2.5%;">
+			<div class='btn-group-justified btn-group' style="padding-right: 1%;">
+				<button class="btn btn-outline-light btn-lg justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasClasses" aria-controls="offcanvasClasses">
+				    Courses
+				</button>
+				<button class="btn btn-outline-light btn-lg justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSkills" aria-controls="offcanvasSkills">
+					Skills
+				</button>
+			</div>
+		</div>
+
+		<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasClasses" aria-labelledby="offcanvasClassesLabel" style="wdith:50%">
+  		    <div class="offcanvas-header">
+		    	<h3 class="offcanvas-title" id="offcanvasClassesLabel">Courses</h3>
+		    	<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		  	</div>
+		    <div class="offcanvas-body">
+		    	<h5 class="lead">
+		      		As I continue my academic journey, I plan to study the classes listed below.
+		    	</h5>
+		    	
+			  	<h6 class="display-6"> Graduate </h6>
+		    	<div class="accordion accordion-flush" id="accordionFlushGraduate" style="width: 80%; padding-top: 4%;">
+			    <div class="accordion-item">
+			    	<h2 class="accordion-header" id="flush-headingSix">
+			      	    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+			        		Computational Vision
+			      		</button>
+			    	</h2>
+			    	<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushGraduate">
+			        	<div class="accordion-body">The goal of this course is to introduce students to the problems, challenges, and applications of computer vision from a computational perspective. Topics include camera modeling and image formation, feature extraction, object and face recognition, image mosaic construction, stereo and three-dimensional imaging, motion, and tracking. Machine learning methods, including deep convolutional neural networks, will be studied and applied throughout the course.</div>
+			    	</div>
+			    </div>
+			    <div class="accordion-item">
+			    	<h2 class="accordion-header" id="flush-headingSeven">
+			      	    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+			        	    Parallel Computing
+			        	</button>
+			    	</h2>
+			    	<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushGraduate">
+			      		<div class="accordion-body">A survey of fundamental issues in design of efficient programs for parallel computers. The topics discussed include models of parallel machines and programs, efficiency of parallel algorithms, programming styles for shared memory, message passing, data parallelism, and using MPI in scientific parallel programs. Parallel programming project required.</div>
+			    	</div>
+			    </div>
+			    <div class="accordion-item">
+			    	<h2 class="accordion-header" id="flush-headingEight">
+			        	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+			        		Ontologies
+			        	</button>
+			    	</h2>
+			    	<div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushGraduate">
+			      		<div class="accordion-body">This course provides an introduction to ontologies, their uses, and an overview of their application in semantically enabled systems. Ontologies encode term meanings and are used to improve communication and enable computer programs to function more effectively. Class participants learn how to use ontologies in web-based applications and evaluate ontologies for reuse. Participants read relevant papers, learn how to critically review ontology papers and ontologies, and participate in group project(s) designing, using, and evaluating ontologies.</div>
+			    	</div>
+			  	</div>
+			  	<div class="accordion-item">
+			  		<h2 class="accordion-header" id="flush-headingNine">
+			  			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+			  				Data Mining
+			  			</button>
+			  		</h2>
+			  		<div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushGraduate">
+			  			<div class="accordion-body">This course will provide an introductory survey of the main topics in data mining and knowledge discovery in databases (KDD), including: classification, clustering, association rules, sequence mining, similarity search, deviation detection, and so on. Emphasis will be on the algorithmic and system issues in KDD, as well as on applications such as Web mining, multimedia mining, bioinformatics, geographical information systems, etc.</div>
+			  		</div>
+			  	</div>
+			  	<div class="accordion-item">
+			  		<h2 class="accordion-header" id="flush-headerTen">
+			  			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+			  				Linguistics of Computational Linguistics
+			  			</button>
+			  		</h2>
+			  		<div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushGraduate">
+			  			<div class="accordion-body">This course will explore how linguistics, the scientific study of the properties of human language and languages, can be applied to the development of intelligent agents that can fluently and meaningfully communicate with people in natural language. It will focus on linguistic phenomena that have so far been particularly resistant to effective machine processing, such as lexical ambiguity resolution, reference resolution, ellipsis, indirect speech acts, implicature, and non-literal language (e.g., metaphor and irony).</div>
+			  		</div>
+			  	</div>
+		    </div>
+		</div>
+	</div>
+
+	<div class="offcanvas offcanvas-end" data-bs-scroll="true" style="width: 50%;" tabindex="-1" id="offcanvasSkills" aria-labelledby="offcanvasSkillsLabel">
+		<div class="offcanvas-header">
+	    	<h3 class="offcanvas-title" id="offcanvasSkillsLabel">Skills/Hobbies</h3>
+	    	<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	  	</div>
+	    <div class="offcanvas-body">
+	    	<h5 class="lead">
+	      		I have been keeping an eye on the following personal interests.
+	    	</h5>
+	    	<ul class="list-group list-group-flush">
+	    		<li class="list-group-item">Scrum Master training</li>
+				<li class="list-group-item accordion-item">
+				    <h2 class="accordion-header" id="flush-headingOne">
+				        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+				        	Languages
+				        </button>
+				    </h2>
+				    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+				        <div class="accordion-body">
+				        	<table class="table">
+				        		<tbody>
+				        			<tr>
+				        				<th scope="row">Mediterranean</th>
+				        				<td>Arabic</td>
+				        				<td>Farsi</td>
+				        				<td>Hebrew</td>
+				        				<td>Turkish</td>
+				        				<td></td>
+				        			</tr>
+				        			<tr>
+				        				<th scope="row">Asian</th>
+				        				<td>Cantonese</td>
+				        				<td>Japanese</td>
+				        				<td>Korean</td>
+				        				<td>Vietnamese</td>
+				        				<td></td>
+				        			</tr>
+				        			<tr>
+				        				<th scope="row">European(ish)</th>
+				        				<td>Croatian</td>
+				        				<td>Russian</td>
+				        				<td>Silbo Gomero</td>
+				        				<td>Slovenian</td>
+				        				<td></td>
+				        			</tr>
+				        			<tr>
+				        				<th scope="row">Native American</th>
+				        				<td>Cherokee</td>
+				        				<td>Chinook</td>
+				        				<td>Ojibwe</td>
+				        				<td></td>
+				        				<td></td>
+				        			</tr>
+				        			<tr>
+				        				<th scope="row">African</th>
+				        				<td>Hausa</td>
+				        				<td>Swahili</td>
+				        				<td>Wolof</td>
+				        				<td>Xhosa</td>
+				        				<td>Yoruba</td>
+				        			</tr>
+				        		</tbody>
+				        	</table>
+				        </div>
+				    </div>
+				</li>
+				<li class="list-group-item">Skateboarding</li>
+				<li class="list-group-item">Gymnastics</li>
+				<li class="list-group-item">Various martial arts</li>
+				<li class="list-group-item">Digital drawing</li>
+				<li class="list-group-item">Digital painting</li>
+	    	</ul>
+	    </div>
+	</div>
+
+	</span>
 </div>
 </body>
 </html>
+
+<script type="text/javascript">
+	content_toggle(document.getElementById('future-content'))
+</script>
